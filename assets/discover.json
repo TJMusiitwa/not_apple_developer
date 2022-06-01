@@ -1,0 +1,344 @@
+[
+    {
+        "discoverTitle": "The Qualities of Great Design",
+        "discoverCollection": "WWDC 2018",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/42/2134/2134_wide_250x141_2x.jpg",
+        "sectionTitle": "Great developer habits"
+    },
+    {
+        "discoverTitle": "Identify trends with the Power and Performance API",
+        "discoverCollection": "WWDC 2020",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/49/3536/3536_wide_250x141_2x.jpg",
+        "sectionTitle": "Great developer habits"
+    },
+    {
+        "discoverTitle": "I Have This Idea For An App...",
+        "discoverCollection": "WWDC 2018",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/42/2211/2211_wide_250x141_2x.jpg",
+        "sectionTitle": "Great developer habits"
+    },
+    {
+        "discoverTitle": "Getting Started with Xcode",
+        "discoverCollection": "WWDC 2019",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/48/2767/2767_wide_250x141_2x.jpg",
+        "sectionTitle": "Great developer habits"
+    },
+    {
+        "discoverTitle": "Introduction to SwiftUI",
+        "discoverCollection": "WWDC 2020",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/49/3359/3359_wide_250x141_2x.jpg",
+        "sectionTitle": "Great developer habits"
+    },
+    {
+        "discoverTitle": "Make your app visually accessible",
+        "discoverCollection": "WWDC 2020",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/49/3565/3565_wide_250x141_2x.jpg",
+        "sectionTitle": "Great developer habits"
+    },
+    {
+        "discoverTitle": "The details of UI typography",
+        "discoverCollection": "WWDC 2020",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/49/3823/3823_wide_250x141_2x.jpg",
+        "sectionTitle": "Great developer habits"
+    },
+    {
+        "discoverTitle": "Designing Sound",
+        "discoverCollection": "WWDC 2017",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/7/1638/1638_wide_250x141_2x.jpg",
+        "sectionTitle": "Great developer habits"
+    },
+    {
+        "discoverTitle": "Essential Design Principles",
+        "discoverCollection": "WWDC 2017",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/7/1700/1700_wide_250x141_2x.jpg",
+        "sectionTitle": "Great developer habits"
+    },
+    {
+        "discoverTitle": "The practice of inclusive design",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5206/5206_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "What‘s new in Swift",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5103/5103_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Meet async/await in Swift",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5033/5033_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Meet Xcode Cloud",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5198/5198_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Meet Group Activities",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5094/5094_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Demystify SwiftUI",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4888/4888_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Meet TestFlight on Mac",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5075/5075_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Explore ARKit 5",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4965/4965_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Dive into RealityKit 2",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4966/4966_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Create 3D models with Object Capture",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4968/4968_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Detect people, faces, and poses using Vision",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4930/4930_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Meet Shortcuts for macOS",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5147/5147_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Meet StoreKit 2",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5011/5011_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "What’s new in SF Symbols",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4992/4992_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Discoverable design",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5027/5027_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Design for spatial interaction",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5165/5165_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Apple’s privacy pillars in focus",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4978/4978_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Explore ShazamKit",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4934/4934_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Design for Safari 15",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4917/4917_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Immerse your app in spatial audio",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5196/5196_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Discover geometry-aware audio with the Physical Audio Spatialization Engine (PHASE)",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4971/4971_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Deliver a great playback experience on tvOS",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5102/5102_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Bring accessibility to charts in your app",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5020/5020_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Meet DocC documentation in Xcode",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5070/5070_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Meet the Screen Time API",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5021/5021_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Classify hand poses and actions with Create ML",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4929/4929_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Extract document data using Vision",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4931/4931_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "What’s new in Game Center: Widgets, friends, and multiplayer improvements",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4957/4957_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Principles of great widgets",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4938/4938_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "What’s new in camera capture",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4937/4937_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Use the camera for keyboard input in your app",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5208/5208_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Get ready for iCloud Private Relay",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/4991/4991_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Explore Nearby Interaction with third-party accessories",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5068/5068_wide_250x141_2x.jpg",
+        "sectionTitle": "Best of WWDC21"
+    },
+    {
+        "discoverTitle": "Keynote",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5721/5721_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "Keynote (ASL)",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5742/5742_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "Platforms State of the Union",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5003/5003_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "Platforms State of the Union (ASL)",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5743/5743_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "WWDC21 Apple Design Awards",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5599/5599_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "WWDC21 Apple Design Awards (ASL)",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5744/5744_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "Accessibility by design: An Apple Watch for everyone",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5258/5258_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "Accessibility by design: An Apple Watch for everyone (ASL)",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5833/5833_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "Out of this world... on to Mars",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5271/5271_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "Meditation for fidgety skeptics",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5270/5270_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 highlights"
+    },
+    {
+        "discoverTitle": "Monday@WWDC21",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5275/5275_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 Recaps"
+    },
+    {
+        "discoverTitle": "Tuesday@WWDC21",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5276/5276_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 Recaps"
+    },
+    {
+        "discoverTitle": "Wednesday@WWDC21",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5277/5277_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 Recaps"
+    },
+    {
+        "discoverTitle": "Thursday@WWDC21",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5278/5278_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 Recaps"
+    },
+    {
+        "discoverTitle": "Friday@WWDC21",
+        "discoverCollection": "WWDC21",
+        "discoverImage": "https://devimages-cdn.apple.com/wwdc-services/images/119/5279/5279_wide_250x141_2x.jpg",
+        "sectionTitle": "WWDC21 Recaps"
+    }
+]
