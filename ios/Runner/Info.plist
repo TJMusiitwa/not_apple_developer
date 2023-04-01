@@ -53,5 +53,7 @@
 		<string>Add events to your calendar to remind you.</string>
 		<key>UIStatusBarHidden</key>
 		<false/>
-	</dict>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+</dict>
 </plist>

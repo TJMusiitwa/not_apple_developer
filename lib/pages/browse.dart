@@ -1,4 +1,3 @@
-import 'package:cupertino_lists/cupertino_lists.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:not_apple_developer/pages/browse_sub_pages/bookmarks.dart';
 import 'package:not_apple_developer/pages/browse_sub_pages/downloaded.dart';

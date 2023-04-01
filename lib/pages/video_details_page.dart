@@ -1,10 +1,9 @@
-import 'package:chewie/chewie.dart';
+//import 'package:chewie/chewie.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' show Material;
-import 'package:flutter/services.dart';
 import 'package:not_apple_developer/models/details.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:video_player/video_player.dart';
+//import 'package:video_player/video_player.dart';
 
 class VideoDetailsPage extends StatefulWidget {
   const VideoDetailsPage({Key? key, required this.detailsIdentifier})
@@ -26,30 +25,30 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
         .single;
   }
 
-  VideoPlayerController vidPlayerFunction(Details details) {
-    return VideoPlayerController.network(details.hdVideoSrc!);
-  }
+  // VideoPlayerController vidPlayerFunction(Details details) {
+  //   return VideoPlayerController.network(details.hdVideoSrc!);
+  // }
 
-  ChewieController chewieController(Details details) {
-    return ChewieController(
-      videoPlayerController: vidPlayerFunction(details),
-      aspectRatio: 16 / 9,
-      autoPlay: false,
-      looping: false,
-      showControls: true,
-      autoInitialize: true,
-      allowFullScreen: true,
-      allowMuting: true,
-      deviceOrientationsOnEnterFullScreen: [
-        DeviceOrientation.landscapeLeft,
-        DeviceOrientation.landscapeRight,
-      ],
-      deviceOrientationsAfterFullScreen: [
-        DeviceOrientation.portraitDown,
-        DeviceOrientation.portraitUp,
-      ],
-    );
-  }
+  // ChewieController chewieController(Details details) {
+  //   return ChewieController(
+  //     videoPlayerController: vidPlayerFunction(details),
+  //     aspectRatio: 16 / 9,
+  //     autoPlay: false,
+  //     looping: false,
+  //     showControls: true,
+  //     autoInitialize: true,
+  //     allowFullScreen: true,
+  //     allowMuting: true,
+  //     deviceOrientationsOnEnterFullScreen: [
+  //       DeviceOrientation.landscapeLeft,
+  //       DeviceOrientation.landscapeRight,
+  //     ],
+  //     deviceOrientationsAfterFullScreen: [
+  //       DeviceOrientation.portraitDown,
+  //       DeviceOrientation.portraitUp,
+  //     ],
+  //   );
+  // }
 
   @override
   void initState() {
@@ -99,9 +98,10 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                       child: Material(
                         color: CupertinoColors.systemBackground
                             .resolveFrom(context),
-                        child: Chewie(
-                          controller: chewieController(details),
-                        ),
+                        child: const ColoredBox(color: CupertinoColors.activeOrange),
+                        // Chewie(
+                        //   controller: chewieController(details),
+                        // ),
                       ),
                     ),
                     const SizedBox(height: 15),
