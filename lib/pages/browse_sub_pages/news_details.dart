@@ -58,9 +58,7 @@ class NewsDetails extends StatelessWidget {
                     'li': Style.fromTextStyle(
                         CupertinoTheme.of(context).textTheme.textStyle)
                   },
-                  onLinkTap: (url, context, _, __) => launchUrl(
-                    Uri.parse(url!),
-                  ),
+                  onLinkTap: (url, _, __) => launchUrl(Uri.parse(url!)),
                 ),
               ],
             ),
