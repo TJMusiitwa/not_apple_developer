@@ -3,7 +3,7 @@ import 'package:not_apple_developer/models/video.dart';
 import 'package:not_apple_developer/utils/custom_cupertino_list_tile.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({Key? key}) : super(key: key);
+  const SearchPage({super.key});
 
   @override
   State<SearchPage> createState() => _SearchPageState();

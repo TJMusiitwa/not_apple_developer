@@ -5,7 +5,7 @@ import 'package:not_apple_developer/pages/video_details_page.dart';
 import 'package:not_apple_developer/utils/custom_cupertino_list_tile.dart';
 
 class DiscoverPage extends StatefulWidget {
-  const DiscoverPage({Key? key}) : super(key: key);
+  const DiscoverPage({super.key});
 
   @override
   State<DiscoverPage> createState() => _DiscoverPageState();

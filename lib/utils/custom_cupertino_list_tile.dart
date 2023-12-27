@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 
 class CustomCupertinoListTile extends StatelessWidget {
   const CustomCupertinoListTile({
-    Key? key,
+    super.key,
     required this.leadingImage,
     required this.title,
     required this.subtitle,
     this.onTap,
-  }) : super(key: key);
+  });
 
   final String leadingImage;
   final String title;

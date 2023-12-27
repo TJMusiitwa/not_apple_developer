@@ -4,7 +4,7 @@ import 'package:not_apple_developer/pages/browse_sub_pages/downloaded.dart';
 import 'package:not_apple_developer/pages/browse_sub_pages/news.dart';
 
 class BrowsePage extends StatelessWidget {
-  const BrowsePage({Key? key}) : super(key: key);
+  const BrowsePage({super.key});
 
   @override
   Widget build(BuildContext context) {

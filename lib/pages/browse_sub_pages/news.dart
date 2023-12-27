@@ -7,7 +7,7 @@ import 'package:http/retry.dart';
 import 'package:not_apple_developer/pages/browse_sub_pages/news_details.dart';
 
 class NewsPage extends StatefulWidget {
-  const NewsPage({Key? key}) : super(key: key);
+  const NewsPage({super.key});
 
   @override
   State<NewsPage> createState() => _NewsPageState();

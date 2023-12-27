@@ -5,7 +5,7 @@ import 'package:not_apple_developer/pages/wwdc_sub_pages/developer_labs.dart';
 import 'package:not_apple_developer/pages/wwdc_sub_pages/lounges.dart';
 
 class WWDCPage extends StatelessWidget {
-  const WWDCPage({Key? key}) : super(key: key);
+  const WWDCPage({super.key});
 
   @override
   Widget build(BuildContext context) {

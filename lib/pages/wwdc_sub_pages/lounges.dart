@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class DigitalLounges extends StatelessWidget {
-  const DigitalLounges({Key? key}) : super(key: key);
+  const DigitalLounges({super.key});
 
   @override
   Widget build(BuildContext context) {

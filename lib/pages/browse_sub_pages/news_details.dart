@@ -5,11 +5,10 @@ import 'package:url_launcher/url_launcher.dart';
 
 class NewsDetails extends StatelessWidget {
   const NewsDetails(
-      {Key? key,
+      {super.key,
       required this.feedDescription,
       required this.feedLink,
-      required this.newsTitle})
-      : super(key: key);
+      required this.newsTitle});
 
   final String newsTitle;
   final String feedDescription;

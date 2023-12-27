@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class DeveloperLabs extends StatelessWidget {
-  const DeveloperLabs({Key? key}) : super(key: key);
+  const DeveloperLabs({super.key});
 
   @override
   Widget build(BuildContext context) {

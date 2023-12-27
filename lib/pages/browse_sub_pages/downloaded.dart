@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class DownloadedPage extends StatelessWidget {
-  const DownloadedPage({Key? key}) : super(key: key);
+  const DownloadedPage({super.key});
 
   @override
   Widget build(BuildContext context) {

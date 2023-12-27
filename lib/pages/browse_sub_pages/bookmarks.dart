@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class BookmarksPage extends StatelessWidget {
-  const BookmarksPage({Key? key}) : super(key: key);
+  const BookmarksPage({super.key});
 
   @override
   Widget build(BuildContext context) {

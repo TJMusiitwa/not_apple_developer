@@ -6,8 +6,7 @@ import 'package:share_plus/share_plus.dart';
 //import 'package:video_player/video_player.dart';
 
 class VideoDetailsPage extends StatefulWidget {
-  const VideoDetailsPage({Key? key, required this.detailsIdentifier})
-      : super(key: key);
+  const VideoDetailsPage({super.key, required this.detailsIdentifier});
 
   final String detailsIdentifier;
 
