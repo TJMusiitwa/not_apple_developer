@@ -21,8 +21,7 @@ class NewsDetails extends StatelessWidget {
           previousPageTitle: 'News',
           trailing: GestureDetector(
               onTap: () {
-                Share.share(
-                    'Check out this article: $newsTitle\n\n$feedDescription\n\n$feedLink',
+                Share.share('Check out this article: $newsTitle\n\n$feedLink',
                     subject:
                         'Check out this article from Apple Developer News');
               },
