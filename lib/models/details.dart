@@ -31,14 +31,14 @@ class Details {
   final String? sdVideoSrc;
 
   factory Details.fromJson(Map<String, dynamic> json) => Details(
-        videoParentLink: json["video_parent_link"],
-        videoParentLinkHref: json["video_parent_link-href"],
-        videoTitle: json["video_title"],
-        videoDescription: json["video_description"],
-        // videoResources: json["video_resources"],
-        // videoResourcesHref: json["video_resources-href"],
-        videoTranscript: json["video_transcript"] ?? 'No video transcript',
-        hdVideoSrc: json["hd_video_src"] ?? '',
-        sdVideoSrc: json["sd_video_src"] ?? '',
-      );
+    videoParentLink: json["video_parent_link"],
+    videoParentLinkHref: json["video_parent_link-href"],
+    videoTitle: json["video_title"],
+    videoDescription: json["video_description"],
+    // videoResources: json["video_resources"],
+    // videoResourcesHref: json["video_resources-href"],
+    videoTranscript: json["video_transcript"] ?? 'No video transcript',
+    hdVideoSrc: json["hd_video_src"] ?? '',
+    sdVideoSrc: json["sd_video_src"] ?? '',
+  );
 }

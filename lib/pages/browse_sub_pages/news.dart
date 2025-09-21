@@ -22,9 +22,9 @@ class _NewsPageState extends State<NewsPage> {
       return await client
           .get(Uri.parse('https://developer.apple.com/news/rss/news.rss'))
           .then((response) {
-        newsFeed = RssFeed.parse(response.body);
-        return newsFeed;
-      });
+            newsFeed = RssFeed.parse(response.body);
+            return newsFeed;
+          });
     } on HttpException catch (e) {
       throw Exception(e.message);
     }
@@ -60,33 +60,33 @@ class _NewsPageState extends State<NewsPage> {
                 SliverSafeArea(
                   top: false,
                   sliver: SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      ((context, index) {
-                        var newsItem = newsFeed.items[index];
-                        return CupertinoListTile(
-                          title: ConstrainedBox(
-                            constraints: BoxConstraints(
-                                maxWidth:
-                                    MediaQuery.of(context).size.width * 0.8),
-                            child: Text(
-                              newsItem.title!,
-                              softWrap: true,
-                              overflow: TextOverflow.clip,
+                    delegate: SliverChildBuilderDelegate(((context, index) {
+                      var newsItem = newsFeed.items[index];
+                      return CupertinoListTile(
+                        title: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxWidth: MediaQuery.of(context).size.width * 0.8,
+                          ),
+                          child: Text(
+                            newsItem.title!,
+                            softWrap: true,
+                            overflow: TextOverflow.clip,
+                          ),
+                        ),
+                        trailing: const CupertinoListTileChevron(),
+                        subtitle: Text(newsItem.pubDate!),
+                        onTap: () => Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (_) => NewsDetails(
+                              newsTitle: newsItem.title!,
+                              feedDescription: newsItem.description!,
+                              feedLink: newsItem.link!,
                             ),
                           ),
-                          trailing: const CupertinoListTileChevron(),
-                          subtitle: Text(newsItem.pubDate!),
-                          onTap: () => Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (_) => NewsDetails(
-                                      newsTitle: newsItem.title!,
-                                      feedDescription: newsItem.description!,
-                                      feedLink: newsItem.link!))),
-                        );
-                      }),
-                      childCount: newsFeed.items.length,
-                    ),
+                        ),
+                      );
+                    }), childCount: newsFeed.items.length),
                   ),
                 ),
               ],
@@ -94,9 +94,7 @@ class _NewsPageState extends State<NewsPage> {
           );
         }
         return const CupertinoPageScaffold(
-          child: Center(
-            child: CupertinoActivityIndicator(),
-          ),
+          child: Center(child: CupertinoActivityIndicator()),
         );
       },
     );

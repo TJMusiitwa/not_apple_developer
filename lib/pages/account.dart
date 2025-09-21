@@ -7,9 +7,7 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return NestedScrollView(
       headerSliverBuilder: (context, innerBoxIsScrolled) => [
-        const CupertinoSliverNavigationBar(
-          largeTitle: Text('Account'),
-        )
+        const CupertinoSliverNavigationBar(largeTitle: Text('Account')),
       ],
       body: SafeArea(
         top: false,
@@ -22,31 +20,38 @@ class AccountPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CupertinoListTile(
-                    title: Text('Sign In',
-                        style: CupertinoTheme.of(context)
-                            .textTheme
-                            .actionTextStyle),
+                    title: Text(
+                      'Sign In',
+                      style: CupertinoTheme.of(
+                        context,
+                      ).textTheme.actionTextStyle,
+                    ),
                     onTap: () {},
                     backgroundColor: CupertinoColors.secondarySystemBackground
                         .resolveFrom(context),
                   ),
                   const SizedBox(height: 5),
                   Text(
-                      'Sign in with your Apple ID to manage your Apple Developer account and more.',
-                      style: CupertinoTheme.of(context)
-                          .textTheme
-                          .tabLabelTextStyle),
+                    'Sign in with your Apple ID to manage your Apple Developer account and more.',
+                    style: CupertinoTheme.of(
+                      context,
+                    ).textTheme.tabLabelTextStyle,
+                  ),
                   const SizedBox(height: 20),
-                  Text('APPLE DEVELOPER PROGRAM',
-                      style: CupertinoTheme.of(context)
-                          .textTheme
-                          .tabLabelTextStyle),
+                  Text(
+                    'APPLE DEVELOPER PROGRAM',
+                    style: CupertinoTheme.of(
+                      context,
+                    ).textTheme.tabLabelTextStyle,
+                  ),
                   const SizedBox(height: 8),
                   CupertinoListTile(
-                    title: Text('Enroll Now',
-                        style: CupertinoTheme.of(context)
-                            .textTheme
-                            .actionTextStyle),
+                    title: Text(
+                      'Enroll Now',
+                      style: CupertinoTheme.of(
+                        context,
+                      ).textTheme.actionTextStyle,
+                    ),
                     onTap: () {},
                     backgroundColor: CupertinoColors.secondarySystemBackground
                         .resolveFrom(context),
@@ -60,10 +65,11 @@ class AccountPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                      'Customise how you receive updates about your account,announcements, WWDC and more.',
-                      style: CupertinoTheme.of(context)
-                          .textTheme
-                          .tabLabelTextStyle),
+                    'Customise how you receive updates about your account,announcements, WWDC and more.',
+                    style: CupertinoTheme.of(
+                      context,
+                    ).textTheme.tabLabelTextStyle,
+                  ),
                 ],
               ),
             ),

@@ -23,18 +23,18 @@ class Video {
   final String videoThumbnail;
 
   factory Video.fromJson(Map<String, dynamic> json) => Video(
-        videoTitle: json["videoTitle"],
-        collection: json["collection"],
-        platforms: json["platforms"] ?? '',
-        description: json["description"],
-        videoThumbnail: json["videoThumbnail"],
-      );
+    videoTitle: json["videoTitle"],
+    collection: json["collection"],
+    platforms: json["platforms"] ?? '',
+    description: json["description"],
+    videoThumbnail: json["videoThumbnail"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "videoTitle": videoTitle,
-        "collection": collection,
-        "platforms": platforms,
-        "description": description,
-        "videoThumbnail": videoThumbnail,
-      };
+    "videoTitle": videoTitle,
+    "collection": collection,
+    "platforms": platforms,
+    "description": description,
+    "videoThumbnail": videoThumbnail,
+  };
 }

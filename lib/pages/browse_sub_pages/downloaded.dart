@@ -12,11 +12,7 @@ class DownloadedPage extends StatelessWidget {
             largeTitle: Text('Downloaded'),
             previousPageTitle: 'Browse',
           ),
-          SliverFillRemaining(
-            child: Center(
-              child: Text('Downloaded'),
-            ),
-          ),
+          SliverFillRemaining(child: Center(child: Text('Downloaded'))),
         ],
       ),
     );

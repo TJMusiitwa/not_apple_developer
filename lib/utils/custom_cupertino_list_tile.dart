@@ -18,9 +18,7 @@ class CustomCupertinoListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(
-        minHeight: 90,
-      ),
+      constraints: const BoxConstraints(minHeight: 90),
       child: GestureDetector(
         onTap: onTap,
         behavior: HitTestBehavior.opaque,
@@ -50,9 +48,9 @@ class CustomCupertinoListTile extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: CupertinoTheme.of(context)
-                          .textTheme
-                          .tabLabelTextStyle,
+                      style: CupertinoTheme.of(
+                        context,
+                      ).textTheme.tabLabelTextStyle,
                     ),
                     const SizedBox(height: 8),
                     Text(
@@ -60,9 +58,9 @@ class CustomCupertinoListTile extends StatelessWidget {
                       softWrap: true,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: CupertinoTheme.of(context)
-                          .textTheme
-                          .navTitleTextStyle,
+                      style: CupertinoTheme.of(
+                        context,
+                      ).textTheme.navTitleTextStyle,
                     ),
                   ],
                 ),

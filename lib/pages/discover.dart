@@ -18,9 +18,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
     return NestedScrollView(
       headerSliverBuilder: (context, innerBoxIsScrolled) {
         return <Widget>[
-          const CupertinoSliverNavigationBar(
-            largeTitle: Text('Discover'),
-          ),
+          const CupertinoSliverNavigationBar(largeTitle: Text('Discover')),
         ];
       },
       body: SafeArea(
@@ -37,8 +35,11 @@ class _DiscoverPageState extends State<DiscoverPage> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.4,
                       width: double.infinity,
-                      child: Image.asset('assets/wwdc22.jpg',
-                          fit: BoxFit.cover, colorBlendMode: BlendMode.darken),
+                      child: Image.asset(
+                        'assets/wwdc22.jpg',
+                        fit: BoxFit.cover,
+                        colorBlendMode: BlendMode.darken,
+                      ),
                     ),
                     Positioned(
                       left: 5,
@@ -50,11 +51,12 @@ class _DiscoverPageState extends State<DiscoverPage> {
                             .textTheme
                             .pickerTextStyle
                             .copyWith(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25,
-                                color: CupertinoColors.white),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                              color: CupertinoColors.white,
+                            ),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 greatDeveloperHabits(),
@@ -67,8 +69,9 @@ class _DiscoverPageState extends State<DiscoverPage> {
   }
 
   Future<List<Discover>> getDiscoverData() async {
-    var discoverData =
-        await DefaultAssetBundle.of(context).loadString('assets/discover.json');
+    var discoverData = await DefaultAssetBundle.of(
+      context,
+    ).loadString('assets/discover.json');
     return discoverFromJson(discoverData);
   }
 
@@ -78,18 +81,14 @@ class _DiscoverPageState extends State<DiscoverPage> {
       builder: (BuildContext context, AsyncSnapshot<List<Discover>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting &&
             snapshot.data != null) {
-          return const Center(
-            child: CupertinoActivityIndicator(),
-          );
+          return const Center(child: CupertinoActivityIndicator());
         }
         if (snapshot.hasError) {
           debugPrint(snapshot.error.toString());
         }
 
         if (snapshot.hasData == false) {
-          return const Center(
-            child: Text('No data'),
-          );
+          return const Center(child: Text('No data'));
         }
         return snapshot.data!.isNotEmpty
             ? GroupedListView<Discover, String>(
@@ -101,9 +100,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                   padding: const EdgeInsets.only(left: 8.0, top: 20),
                   child: Text(
                     discover.sectionTitle,
-                    style: CupertinoTheme.of(context)
-                        .textTheme
-                        .pickerTextStyle
+                    style: CupertinoTheme.of(context).textTheme.pickerTextStyle
                         .copyWith(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
                 ),
@@ -121,10 +118,13 @@ class _DiscoverPageState extends State<DiscoverPage> {
                     subtitle: item.discoverTitle,
                     leadingImage: item.discoverImage,
                     onTap: () => Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (_) => VideoDetailsPage(
-                                detailsIdentifier: item.discoverTitle))),
+                      context,
+                      CupertinoPageRoute(
+                        builder: (_) => VideoDetailsPage(
+                          detailsIdentifier: item.discoverTitle,
+                        ),
+                      ),
+                    ),
                   );
                 },
                 separator: Container(
@@ -137,10 +137,9 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 child: Text(
                   'No discover data',
                   softWrap: true,
-                  style: CupertinoTheme.of(context)
-                      .textTheme
-                      .textStyle
-                      .copyWith(fontSize: 25),
+                  style: CupertinoTheme.of(
+                    context,
+                  ).textTheme.textStyle.copyWith(fontSize: 25),
                 ),
               );
       },

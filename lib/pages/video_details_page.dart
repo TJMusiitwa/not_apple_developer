@@ -17,11 +17,12 @@ class VideoDetailsPage extends StatefulWidget {
 class _VideoDetailsPageState extends State<VideoDetailsPage> {
   int _detailView = 0;
   Future<Details> getDetailsData() async {
-    var detailsData = await DefaultAssetBundle.of(context)
-        .loadString('assets/apple_video_details.json');
-    return detailsFromJson(detailsData)
-        .where((data) => data.videoTitle == widget.detailsIdentifier)
-        .single;
+    var detailsData = await DefaultAssetBundle.of(
+      context,
+    ).loadString('assets/apple_video_details.json');
+    return detailsFromJson(
+      detailsData,
+    ).where((data) => data.videoTitle == widget.detailsIdentifier).single;
   }
 
   // VideoPlayerController vidPlayerFunction(Details details) {
@@ -80,8 +81,12 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                   const SizedBox(width: 30),
                   GestureDetector(
                     child: const Icon(CupertinoIcons.share),
-                    onTap: () => Share.share(
-                        'Hey you should check out this Apple Developer talk video on the title "${details.videoTitle}".\n\nCheck it out at this link${details.videoParentLinkHref}'),
+                    onTap: () => SharePlus.instance.share(
+                      ShareParams(
+                        text:
+                            'Hey you should check out this Apple Developer talk video on the title "${details.videoTitle}".\n\nCheck it out at this link${details.videoParentLinkHref}',
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -95,9 +100,12 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                       height: MediaQuery.of(context).size.height * 0.4,
                       width: MediaQuery.of(context).size.width,
                       child: Material(
-                        color: CupertinoColors.systemBackground
-                            .resolveFrom(context),
-                        child: const ColoredBox(color: CupertinoColors.activeOrange),
+                        color: CupertinoColors.systemBackground.resolveFrom(
+                          context,
+                        ),
+                        child: const ColoredBox(
+                          color: CupertinoColors.activeOrange,
+                        ),
                         // Chewie(
                         //   controller: chewieController(details),
                         // ),
@@ -106,15 +114,17 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                     const SizedBox(height: 15),
                     ConstrainedBox(
                       constraints: BoxConstraints(
-                          maxWidth: MediaQuery.of(context).size.width / 2),
+                        maxWidth: MediaQuery.of(context).size.width / 2,
+                      ),
                       child: CupertinoSlidingSegmentedControl(
-                          children: const {
-                            0: Text('Overview'),
-                            1: Text('Transcript'),
-                          },
-                          groupValue: _detailView,
-                          onValueChanged: (int? value) =>
-                              setState(() => _detailView = value as int)),
+                        children: const {
+                          0: Text('Overview'),
+                          1: Text('Transcript'),
+                        },
+                        groupValue: _detailView,
+                        onValueChanged: (int? value) =>
+                            setState(() => _detailView = value as int),
+                      ),
                     ),
                     const SizedBox(height: 15),
                     _detailView == 0
@@ -131,9 +141,9 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                               const SizedBox(height: 10),
                               Text(
                                 details.videoDescription,
-                                style: CupertinoTheme.of(context)
-                                    .textTheme
-                                    .textStyle,
+                                style: CupertinoTheme.of(
+                                  context,
+                                ).textTheme.textStyle,
                               ),
                               const SizedBox(height: 10),
                               Text(
@@ -147,12 +157,13 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
                           )
                         : Text(
                             details.videoTranscript ?? 'No video transcript',
-                            style:
-                                CupertinoTheme.of(context).textTheme.textStyle,
+                            style: CupertinoTheme.of(
+                              context,
+                            ).textTheme.textStyle,
                             //textAlign: TextAlign.justify,
                             textWidthBasis: TextWidthBasis.parent,
                             softWrap: true,
-                          )
+                          ),
                   ],
                 ),
               ),
@@ -169,9 +180,7 @@ class _VideoDetailsPageState extends State<VideoDetailsPage> {
             ),
           );
         } else {
-          return const Center(
-            child: CupertinoActivityIndicator(),
-          );
+          return const Center(child: CupertinoActivityIndicator());
         }
       },
     );

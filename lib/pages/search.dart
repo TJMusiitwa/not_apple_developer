@@ -16,8 +16,9 @@ class _SearchPageState extends State<SearchPage> {
   List<Video> videos = [];
 
   Future<List<Video>> getVideoData() async {
-    var videoData = await DefaultAssetBundle.of(context)
-        .loadString('assets/videos_json.json');
+    var videoData = await DefaultAssetBundle.of(
+      context,
+    ).loadString('assets/videos_json.json');
     videos = videoFromJson(videoData);
     return videos;
   }
@@ -25,9 +26,11 @@ class _SearchPageState extends State<SearchPage> {
   //Search videos
   List<Video> searchVideos(String terms) {
     return videos
-        .where((v) =>
-            v.videoTitle.toLowerCase().contains(terms.toLowerCase()) ||
-            v.collection.toLowerCase().contains(terms.toLowerCase()))
+        .where(
+          (v) =>
+              v.videoTitle.toLowerCase().contains(terms.toLowerCase()) ||
+              v.collection.toLowerCase().contains(terms.toLowerCase()),
+        )
         .toList();
   }
 
@@ -61,9 +64,10 @@ class _SearchPageState extends State<SearchPage> {
         itemBuilder: (BuildContext context, int index) {
           var video = videos[index];
           return CustomCupertinoListTile(
-              leadingImage: video.videoThumbnail,
-              title: video.collection,
-              subtitle: video.videoTitle);
+            leadingImage: video.videoThumbnail,
+            title: video.collection,
+            subtitle: video.videoTitle,
+          );
         },
       ),
     );
@@ -87,7 +91,7 @@ class _SearchPageState extends State<SearchPage> {
               },
             ),
           ),
-          Expanded(child: _buildSearchResults(searchVideos(terms)))
+          Expanded(child: _buildSearchResults(searchVideos(terms))),
         ],
       ),
     );

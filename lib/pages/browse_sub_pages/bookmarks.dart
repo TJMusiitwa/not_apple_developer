@@ -12,11 +12,7 @@ class BookmarksPage extends StatelessWidget {
             largeTitle: Text('Bookmarks'),
             previousPageTitle: 'Browse',
           ),
-          SliverFillRemaining(
-            child: Center(
-              child: Text('Bookmarks'),
-            ),
-          ),
+          SliverFillRemaining(child: Center(child: Text('Bookmarks'))),
         ],
       ),
     );

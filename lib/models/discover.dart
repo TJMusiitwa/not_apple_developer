@@ -26,16 +26,16 @@ class Discover {
   String toRawJson() => json.encode(toJson());
 
   factory Discover.fromJson(Map<String, dynamic> json) => Discover(
-        discoverTitle: json["discoverTitle"],
-        discoverCollection: json["discoverCollection"] ?? '',
-        discoverImage: json["discoverImage"],
-        sectionTitle: json["sectionTitle"],
-      );
+    discoverTitle: json["discoverTitle"],
+    discoverCollection: json["discoverCollection"] ?? '',
+    discoverImage: json["discoverImage"],
+    sectionTitle: json["sectionTitle"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "discoverTitle": discoverTitle,
-        "discoverCollection": discoverCollection,
-        "discoverImage": discoverImage,
-        "sectionTitle": sectionTitle,
-      };
+    "discoverTitle": discoverTitle,
+    "discoverCollection": discoverCollection,
+    "discoverImage": discoverImage,
+    "sectionTitle": sectionTitle,
+  };
 }
