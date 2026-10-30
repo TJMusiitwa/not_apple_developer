@@ -7,7 +7,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.9.2 <4.0.0"
+  sdk: ">=3.13.7 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -16,30 +16,34 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  add_2_calendar: ^3.0.1
-  cached_network_image: ^3.4.1
+  add_2_calendar: ^3.1.1
+  cached_network_image: ^4.0.6
   # chewie: ^1.4.0
-  cupertino_icons: ^1.0.8
-  dart_rss: ^3.0.3
+  cupertino_icons: ^2.0.0
+  cupertino_ui: ^1.1.5
   flutter:
     sdk: flutter
   flutter_html: ^3.0.0-alpha.6
   grouped_list: ^6.0.0
-  http: ^1.5.0
+  # flutter_html 3.0.0 uses an API removed in html 0.15.7.
+  html: 0.15.6
+  http: ^1.6.0
   modal_bottom_sheet: ^3.0.0-pre
-  share_plus: ^12.0.0
-  url_launcher: ^6.3.2
+  share_plus: ^13.3.1
+  url_launcher: ^6.3.3
+  xml: ^7.1.0
   # video_player: ^2.6.0
 
 # dependency_overrides:
 #   xml: ^5.0.1
 
+  material_ui: any
 dev_dependencies:
   flutter_lints: ^6.0.0
-  flutter_native_splash: ^2.4.6
+  flutter_native_splash: ^2.4.8
   flutter_test:
     sdk: flutter
-  icons_launcher: ^3.0.2
+  icons_launcher: ^3.1.0
 
 icons_launcher:
   image_path: "assets/icon.png"

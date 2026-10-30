@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 class DigitalLounges extends StatelessWidget {
   const DigitalLounges({super.key});
@@ -19,11 +19,18 @@ class DigitalLounges extends StatelessWidget {
             ),
           ),
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 50),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: CupertinoButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: const Text('Done'),
+                  ),
+                ),
+                const SizedBox(height: 12),
                 const Center(
                   child: Icon(
                     CupertinoIcons.lightbulb,
@@ -49,9 +56,8 @@ class DigitalLounges extends StatelessWidget {
                 Text(
                   'Join Apple engineers and designers throughout the week as they host text-based Q&As, session watch parties with the presenter, community icebreakers, and more.',
                   textAlign: TextAlign.center,
-                  style: CupertinoTheme.of(
-                    context,
-                  ).textTheme.textStyle.copyWith(color: CupertinoColors.white),
+                  style: CupertinoTheme.of(context).textTheme.textStyle
+                      .copyWith(color: CupertinoColors.white),
                 ),
                 const SizedBox(height: 20),
                 const Center(
@@ -74,10 +80,9 @@ class DigitalLounges extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   'You can submit an appointment request if you’re a current member of the Apple Developer Program or the Apple Developer Enterprise Program, or a 2022 Swift Student Challenge winner.',
-                  textAlign: TextAlign.justify,
-                  style: CupertinoTheme.of(
-                    context,
-                  ).textTheme.textStyle.copyWith(color: CupertinoColors.white),
+                  textAlign: TextAlign.start,
+                  style: CupertinoTheme.of(context).textTheme.textStyle
+                      .copyWith(color: CupertinoColors.white),
                 ),
                 const SizedBox(height: 20),
                 Text(
@@ -91,10 +96,9 @@ class DigitalLounges extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   'Register for Digital Lounges here or in the Apple Developer app. Make sure to register the week of May 31, so that you’ll be ready once lounges open on June 7.\n\nSign in with your Apple ID, choose one or more topics, enter your information, and submit. Once your registration is processed for the first time, you’ll receive an email with details on participating in the lounges. You can register for more lounges at any time.',
-                  textAlign: TextAlign.justify,
-                  style: CupertinoTheme.of(
-                    context,
-                  ).textTheme.textStyle.copyWith(color: CupertinoColors.white),
+                  textAlign: TextAlign.start,
+                  style: CupertinoTheme.of(context).textTheme.textStyle
+                      .copyWith(color: CupertinoColors.white),
                 ),
                 const SizedBox(height: 30),
                 Text(

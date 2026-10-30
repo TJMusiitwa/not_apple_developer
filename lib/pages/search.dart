@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:not_apple_developer/models/video.dart';
+import 'package:not_apple_developer/pages/video_details_page.dart';
 import 'package:not_apple_developer/utils/custom_cupertino_list_tile.dart';
 
 class SearchPage extends StatefulWidget {
@@ -16,11 +17,9 @@ class _SearchPageState extends State<SearchPage> {
   List<Video> videos = [];
 
   Future<List<Video>> getVideoData() async {
-    var videoData = await DefaultAssetBundle.of(
-      context,
-    ).loadString('assets/videos_json.json');
-    videos = videoFromJson(videoData);
-    return videos;
+    var videoData = await DefaultAssetBundle.of(context)
+        .loadString('assets/videos_json.json');
+    return videoFromJson(videoData);
   }
 
   //Search videos
@@ -35,22 +34,23 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _buildSearchResults(List<Video> videos) {
+    if (controller.text.trim().isEmpty) {
+      return Center(
+        child: Text(
+          'Search videos by title or collection',
+          textAlign: TextAlign.center,
+          style: CupertinoTheme.of(context).textTheme.textStyle.copyWith(
+            color: CupertinoColors.secondaryLabel.resolveFrom(context),
+          ),
+        ),
+      );
+    }
     if (videos.isEmpty) {
       return Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Text(
             'No content matching your search terms were found.',
-            style: CupertinoTheme.of(context).textTheme.navTitleTextStyle,
-          ),
-        ),
-      );
-    } else if (controller.text.isEmpty) {
-      return Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Text(
-            'Enter a term to search for...',
             style: CupertinoTheme.of(context).textTheme.navTitleTextStyle,
           ),
         ),
@@ -67,6 +67,13 @@ class _SearchPageState extends State<SearchPage> {
             leadingImage: video.videoThumbnail,
             title: video.collection,
             subtitle: video.videoTitle,
+            onTap: () => Navigator.push(
+              context,
+              CupertinoPageRoute(
+                builder: (_) =>
+                    VideoDetailsPage(detailsIdentifier: video.videoTitle),
+              ),
+            ),
           );
         },
       ),
@@ -84,7 +91,7 @@ class _SearchPageState extends State<SearchPage> {
               controller: controller,
               focusNode: focusNode,
               padding: const EdgeInsets.all(8),
-              placeholder: 'Videos,Articles,News',
+              placeholder: 'Search videos',
               style: CupertinoTheme.of(context).textTheme.textStyle,
               onSubmitted: (value) {
                 debugPrint(value);
@@ -107,7 +114,9 @@ class _SearchPageState extends State<SearchPage> {
   @override
   void initState() {
     super.initState();
-    getVideoData();
+    getVideoData().then((value) {
+      if (mounted) setState(() => videos = value);
+    });
     controller.addListener(_onTextChanged);
   }
 

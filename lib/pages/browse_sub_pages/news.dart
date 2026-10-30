@@ -1,10 +1,8 @@
-import 'dart:io';
-
-import 'package:dart_rss/dart_rss.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/retry.dart';
 import 'package:not_apple_developer/pages/browse_sub_pages/news_details.dart';
+import 'package:xml/xml.dart';
 
 class NewsPage extends StatefulWidget {
   const NewsPage({super.key});
@@ -14,89 +12,97 @@ class NewsPage extends StatefulWidget {
 }
 
 class _NewsPageState extends State<NewsPage> {
-  late RssFeed newsFeed;
-  final client = RetryClient(http.Client());
+  final _client = RetryClient(http.Client());
+  late Future<List<XmlElement>> _feed = _loadFeed();
 
-  Future<RssFeed> getAppleNewsFeed() async {
-    try {
-      return await client
-          .get(Uri.parse('https://developer.apple.com/news/rss/news.rss'))
-          .then((response) {
-            newsFeed = RssFeed.parse(response.body);
-            return newsFeed;
-          });
-    } on HttpException catch (e) {
-      throw Exception(e.message);
-    }
-    //throw Exception('Failed to load rss feed');
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    client;
-    getAppleNewsFeed();
+  Future<List<XmlElement>> _loadFeed() async {
+    final response = await _client.get(
+      Uri.parse('https://developer.apple.com/news/rss/news.rss'),
+    );
+    if (response.statusCode != 200) throw Exception('News request failed');
+    return XmlDocument.parse(response.body).findAllElements('item').toList();
   }
 
   @override
   void dispose() {
-    client.close();
+    _client.close();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: getAppleNewsFeed(),
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        if (snapshot.hasData) {
-          return CupertinoPageScaffold(
-            child: CustomScrollView(
-              slivers: <Widget>[
-                const CupertinoSliverNavigationBar(
-                  largeTitle: Text('News'),
-                  previousPageTitle: 'Browse',
-                ),
-                SliverSafeArea(
-                  top: false,
-                  sliver: SliverList(
-                    delegate: SliverChildBuilderDelegate(((context, index) {
-                      var newsItem = newsFeed.items[index];
-                      return CupertinoListTile(
-                        title: ConstrainedBox(
-                          constraints: BoxConstraints(
-                            maxWidth: MediaQuery.of(context).size.width * 0.8,
-                          ),
-                          child: Text(
-                            newsItem.title!,
-                            softWrap: true,
-                            overflow: TextOverflow.clip,
-                          ),
+    return CupertinoPageScaffold(
+      child: CustomScrollView(
+        slivers: [
+          const CupertinoSliverNavigationBar(
+            largeTitle: Text('News'),
+            previousPageTitle: 'Browse',
+          ),
+          FutureBuilder<List<XmlElement>>(
+            future: _feed,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState != ConnectionState.done) {
+                return const SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Center(child: CupertinoActivityIndicator()),
+                );
+              }
+              if (snapshot.hasError) {
+                return SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text('Unable to load news.'),
+                        CupertinoButton(
+                          onPressed: () => setState(() => _feed = _loadFeed()),
+                          child: const Text('Try Again'),
                         ),
-                        trailing: const CupertinoListTileChevron(),
-                        subtitle: Text(newsItem.pubDate!),
-                        onTap: () => Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (_) => NewsDetails(
-                              newsTitle: newsItem.title!,
-                              feedDescription: newsItem.description!,
-                              feedLink: newsItem.link!,
-                            ),
-                          ),
-                        ),
-                      );
-                    }), childCount: newsFeed.items.length),
+                      ],
+                    ),
                   ),
+                );
+              }
+              final items = snapshot.data ?? [];
+              if (items.isEmpty) {
+                return const SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Center(child: Text('No news available.')),
+                );
+              }
+              return SliverSafeArea(
+                top: false,
+                sliver: SliverList.builder(
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    final item = items[index];
+                    final title = item.getElement('title')?.innerText ?? '';
+                    return CupertinoListTile(
+                      title: Text(title),
+                      subtitle: Text(
+                        item.getElement('pubDate')?.innerText ?? '',
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      onTap: () => Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (_) => NewsDetails(
+                            newsTitle: title,
+                            feedDescription:
+                                item.getElement('description')?.innerText ?? '',
+                            feedLink: item.getElement('link')?.innerText ?? '',
+                          ),
+                        ),
+                      ),
+                    );
+                  },
                 ),
-              ],
-            ),
-          );
-        }
-        return const CupertinoPageScaffold(
-          child: Center(child: CupertinoActivityIndicator()),
-        );
-      },
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }

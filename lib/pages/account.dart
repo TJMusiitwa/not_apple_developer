@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -22,53 +22,53 @@ class AccountPage extends StatelessWidget {
                   CupertinoListTile(
                     title: Text(
                       'Sign In',
-                      style: CupertinoTheme.of(
-                        context,
-                      ).textTheme.actionTextStyle,
+                      style: CupertinoTheme.of(context)
+                          .textTheme
+                          .actionTextStyle,
                     ),
-                    onTap: () {},
+                    subtitle: const Text('Not available yet'),
                     backgroundColor: CupertinoColors.secondarySystemBackground
                         .resolveFrom(context),
                   ),
                   const SizedBox(height: 5),
                   Text(
                     'Sign in with your Apple ID to manage your Apple Developer account and more.',
-                    style: CupertinoTheme.of(
-                      context,
-                    ).textTheme.tabLabelTextStyle,
+                    style: CupertinoTheme.of(context)
+                        .textTheme
+                        .tabLabelTextStyle,
                   ),
                   const SizedBox(height: 20),
                   Text(
                     'APPLE DEVELOPER PROGRAM',
-                    style: CupertinoTheme.of(
-                      context,
-                    ).textTheme.tabLabelTextStyle,
+                    style: CupertinoTheme.of(context)
+                        .textTheme
+                        .tabLabelTextStyle,
                   ),
                   const SizedBox(height: 8),
                   CupertinoListTile(
                     title: Text(
                       'Enroll Now',
-                      style: CupertinoTheme.of(
-                        context,
-                      ).textTheme.actionTextStyle,
+                      style: CupertinoTheme.of(context)
+                          .textTheme
+                          .actionTextStyle,
                     ),
-                    onTap: () {},
+                    subtitle: const Text('Not available yet'),
                     backgroundColor: CupertinoColors.secondarySystemBackground
                         .resolveFrom(context),
                   ),
                   const SizedBox(height: 20),
                   CupertinoListTile(
                     title: const Text('Notifications'),
-                    trailing: const CupertinoListTileChevron(),
+                    subtitle: const Text('Not available yet'),
                     backgroundColor: CupertinoColors.secondarySystemBackground
                         .resolveFrom(context),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     'Customise how you receive updates about your account,announcements, WWDC and more.',
-                    style: CupertinoTheme.of(
-                      context,
-                    ).textTheme.tabLabelTextStyle,
+                    style: CupertinoTheme.of(context)
+                        .textTheme
+                        .tabLabelTextStyle,
                   ),
                 ],
               ),

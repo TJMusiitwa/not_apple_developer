@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 class CustomCupertinoListTile extends StatelessWidget {
   const CustomCupertinoListTile({
@@ -17,62 +17,81 @@ class CustomCupertinoListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(minHeight: 90),
-      child: GestureDetector(
-        onTap: onTap,
-        behavior: HitTestBehavior.opaque,
-        child: Padding(
-          padding: const EdgeInsetsDirectional.only(start: 10, end: 5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.33,
-                  //height: 150,
-                  child: CachedNetworkImage(
-                    imageUrl: leadingImage,
-                    fit: BoxFit.cover,
+    final content = Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: SizedBox(
+              width: 128,
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: CachedNetworkImage(
+                  imageUrl: leadingImage,
+                  fit: BoxFit.cover,
+                  placeholder: (_, _) => ColoredBox(
+                    color: CupertinoColors.tertiarySystemFill.resolveFrom(
+                      context,
+                    ),
+                  ),
+                  errorWidget: (_, _, _) => ColoredBox(
+                    color: CupertinoColors.tertiarySystemFill.resolveFrom(
+                      context,
+                    ),
+                    child: const Icon(
+                      CupertinoIcons.play_rectangle,
+                      color: CupertinoColors.systemGrey,
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      title,
-                      style: CupertinoTheme.of(
-                        context,
-                      ).textTheme.tabLabelTextStyle,
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      subtitle,
-                      softWrap: true,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: CupertinoTheme.of(
-                        context,
-                      ).textTheme.navTitleTextStyle,
-                    ),
-                  ],
-                ),
-              ),
-              Icon(
-                CupertinoIcons.right_chevron,
-                color: CupertinoColors.systemGrey2.resolveFrom(context),
-              ),
-            ],
+            ),
           ),
-        ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (title.isNotEmpty) ...[
+                  Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: CupertinoTheme.of(context).textTheme.textStyle
+                        .copyWith(
+                          fontSize: 13,
+                          color: CupertinoColors.secondaryLabel.resolveFrom(
+                            context,
+                          ),
+                        ),
+                  ),
+                  const SizedBox(height: 4),
+                ],
+                Text(
+                  subtitle,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: CupertinoTheme.of(context).textTheme.textStyle
+                      .copyWith(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+          ),
+          if (onTap != null) ...[
+            const SizedBox(width: 8),
+            const CupertinoListTileChevron(),
+          ],
+        ],
       ),
     );
+    return onTap == null
+        ? content
+        : CupertinoButton(
+            padding: EdgeInsets.zero,
+            onPressed: onTap,
+            child: content,
+          );
   }
 }

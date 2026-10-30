@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 class BookmarksPage extends StatelessWidget {
   const BookmarksPage({super.key});
@@ -12,7 +12,26 @@ class BookmarksPage extends StatelessWidget {
             largeTitle: Text('Bookmarks'),
             previousPageTitle: 'Browse',
           ),
-          SliverFillRemaining(child: Center(child: Text('Bookmarks'))),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    CupertinoIcons.bookmark,
+                    size: 40,
+                    color: CupertinoColors.systemGrey,
+                  ),
+                  SizedBox(height: 12),
+                  Text(
+                    'Saved items will appear here.',
+                    style: TextStyle(color: CupertinoColors.secondaryLabel),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

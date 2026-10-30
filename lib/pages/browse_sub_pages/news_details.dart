@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,8 +20,9 @@ class NewsDetails extends StatelessWidget {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         previousPageTitle: 'News',
-        trailing: GestureDetector(
-          onTap: () {
+        trailing: CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () {
             SharePlus.instance.share(
               ShareParams(
                 text: 'Check out this article: $newsTitle\n\n$feedLink',
@@ -38,12 +39,11 @@ class NewsDetails extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(20, 20, 20, 8),
                 child: Text(
                   newsTitle,
-                  style: CupertinoTheme.of(
-                    context,
-                  ).textTheme.navTitleTextStyle.copyWith(fontSize: 23),
+                  style: CupertinoTheme.of(context).textTheme.navTitleTextStyle
+                      .copyWith(fontSize: 23),
                 ),
               ),
               Html(
@@ -53,9 +53,8 @@ class NewsDetails extends StatelessWidget {
                     CupertinoTheme.of(context).textTheme.textStyle,
                   ),
                   'h3': Style.fromTextStyle(
-                    CupertinoTheme.of(
-                      context,
-                    ).textTheme.navTitleTextStyle.copyWith(fontSize: 23),
+                    CupertinoTheme.of(context).textTheme.navTitleTextStyle
+                        .copyWith(fontSize: 23),
                   ),
                   'a': Style.fromTextStyle(
                     CupertinoTheme.of(context).textTheme.actionTextStyle,
@@ -64,7 +63,10 @@ class NewsDetails extends StatelessWidget {
                     CupertinoTheme.of(context).textTheme.textStyle,
                   ),
                 },
-                onLinkTap: (url, _, _) => launchUrl(Uri.parse(url!)),
+                onLinkTap: (url, _, _) {
+                  final uri = url == null ? null : Uri.tryParse(url);
+                  if (uri != null) launchUrl(uri);
+                },
               ),
             ],
           ),

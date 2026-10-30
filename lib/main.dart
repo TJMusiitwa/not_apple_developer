@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:not_apple_developer/pages/account.dart';
 import 'package:not_apple_developer/pages/browse.dart';
@@ -22,24 +22,25 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (settings) => MaterialWithModalsPageRoute(
         builder: (context) => CupertinoTabScaffold(
           tabBar: CupertinoTabBar(
-            backgroundColor: CupertinoTheme.of(
-              context,
-            ).barBackgroundColor.withValues(alpha: .9),
             items: const [
               BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.compass_fill),
+                icon: Icon(CupertinoIcons.compass),
+                activeIcon: Icon(CupertinoIcons.compass_fill),
                 label: 'Discover',
               ),
               BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.collections_solid),
+                icon: Icon(CupertinoIcons.collections),
+                activeIcon: Icon(CupertinoIcons.collections_solid),
                 label: 'Browse',
               ),
               BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.suit_club_fill),
+                icon: Icon(CupertinoIcons.play_rectangle),
+                activeIcon: Icon(CupertinoIcons.play_rectangle_fill),
                 label: 'WWDC',
               ),
               BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.person_circle_fill),
+                icon: Icon(CupertinoIcons.person_circle),
+                activeIcon: Icon(CupertinoIcons.person_circle_fill),
                 label: 'Account',
               ),
               BottomNavigationBarItem(
